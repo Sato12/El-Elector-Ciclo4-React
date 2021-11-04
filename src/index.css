@@ -1,5 +1,6 @@
 :root {
     --blanco: #ffffff;
+    --gris0: #c1c9cf;
     --gris1: #edf2f6;
     --gris2: #2f3848;
     --gris3: #1a202d;
@@ -60,51 +61,76 @@ a {
     color: var(--gris2);
 }
 
+.home-div {
+    font-size: 6rem;
+    margin-top: 30rem;
+}
+
 
 /** BOTONES **/
 
-.btn {
+.btnn {
     margin-top: 2rem;
     font-family: var(--headingFont);
-    padding: 1.5rem;
-    font-size: 1.4;
-    font-weight: 400;
-    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 0.3rem;
     border: none;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.btnn:hover {
     cursor: pointer;
 }
 
-.btn-primario {
+.btnn-header {
+    background-color: var(--gris2);
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.btnn-header:hover {
+    background: var(--gris3);
+}
+
+.btnn-primario {
     background-color: var(--gris2);
     color: var(--blanco);
 }
 
-.btn-primario:hover {
+.btnn-primario:hover {
     background: var(--gris3);
 }
 
-.btn-secundario {
-    background-color: var(--gris1);
+.btnn-secundario {
+    background-color: var(--gris0);
 }
 
-.btn-block {
+.btnn-secundario:hover {
+    background: var(--gris1);
+}
+
+.btnn-block {
     display: block;
     width: 100%;
 }
 
-.btn-submit:hover {
+.btnn-submit:hover {
     background-color: var(--gris2);
 }
 
-.btn-blank {
+.btnn-blank {
     margin: 0;
     padding: 0;
     display: block;
     background-color: transparent;
+}
+
+.iniciar-sesion-h {
+    font-weight: 50;
+    font-style: italic;
+    font-family: var(--textFont);
 }
 
 @media (min-width: 768px) {
@@ -159,14 +185,27 @@ aside {
 
 .app-header {
     display: flex;
+    margin-bottom: 0rem;
+    justify-content: center;
+    background-color: var(--gris2);
+    padding: 4rem;
+    font-family: "Playfair Display SC", serif;
+    font-size: 2rem;
+}
+
+.app-header-sec {
+    display: flex;
     justify-content: space-between;
     background-color: var(--gris2);
     padding: 4rem;
+    font-family: "Playfair Display SC", serif;
+    font-size: 20rem;
 }
 
 .nombre-usuario {
+    text-align: center;
     color: var(--blanco);
-    font-size: 2.2rem;
+    font-size: 5.5rem;
     margin: 0;
 }
 
@@ -176,7 +215,10 @@ aside {
 
 .nav-principal a {
     color: var(--blanco);
+    text-align: left;
     text-decoration: none;
+    font-family: var(--headingFont);
+    font-weight: 100;
 }
 
 .nav-principal a:first-of-type {
