@@ -13,19 +13,19 @@ const Header = () => {
         </div>
         <nav className="nav-principal ">
           <div className="row justify-content-start mt-3 mb-3">
-            <div className="col-4 col-md-2">
-              <button className="btnn btnn-header ">Ver Candidatos</button>
+            <div className="col-auto col-md-auto">
+              <button className="btnn btnn-header">Ver Candidatos</button>
             </div>
-            <div className="col-4 col-md-2 ">
+            <div className="col-auto col-md-auto ">
               <button className="btnn btnn-header ">Ver Partidos</button>
             </div>
-            <div className="col-4 col-md-2 ">
+            <div className="col-auto col-md-auto ">
               <button className="btnn btnn-header ">Sobre Nosotros</button>
             </div>
-            <div className="col-4 col-md-2">
+            <div className="col-auto col-md-auto">
               <button className="btnn btnn-header ">Contacto</button>
             </div>
-            <div className="col-4 col-md-2 ms-auto ">
+            <div className="col-auto col-md-auto ms-auto ">
               <button href="#!" className="btnn btnn-header">
                 <p className="iniciar-sesion-h">Iniciar Sesión</p>
               </button>
