@@ -229,6 +229,10 @@ aside {
     font-size: 7rem;
 }
 
+.nombre-usuario span:hover {
+    cursor: pointer;
+}
+
 .nav-principal a {
     color: var(--blanco);
     text-align: left;
@@ -287,18 +291,42 @@ aside {
     }
 }
 
+.nav-bar-candidatos {
+    max-width: 100%;
+    display: flex;
+}
+
 .barra-candidatos {
     background-color: #e3f2fd;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 4rem;
 }
 
 .barra-candidatos p {
     font-size: 2rem;
+    display: flex;
 }
 
 .barra-candidatos img {
     margin-right: 1rem;
-    margin-left: 2rem;
-    margin-top: 0.3rem;
+    margin-left: 8rem;
+    margin-top: 0.7rem;
+}
+
+@media (max-width: 768px) {
+    .barra-candidatos {
+        align-items: center;
+        width: 100%;
+    }
+    .barra-candidatos button {
+        display: none;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .barra-candidatos img {
+        align-content: center;
+    }
 }
 
 .listado-tareas {
@@ -454,4 +482,57 @@ aside {
     margin-top: 2rem;
     display: block;
     opacity: 0.7;
+}
+
+.card {
+    border-radius: 2em;
+    box-shadow: 1px 1px 1px 1px #acafb4;
+}
+
+.titulo-tarjeta-canditatos {
+    font-family: "Noticia Text", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: start;
+    /* border-right: 1px dashed #333; */
+}
+
+.texto-tarjeta-canditatos {
+    font-size: 1.3rem;
+}
+
+.tajeta-logo {
+    max-width: 6rem;
+    max-height: 6rem;
+    margin-bottom: -1.5rem;
+}
+
+.tajerta-icono-posicion {
+    margin-right: 0.5rem;
+}
+
+.numero-de-tarjeta {
+    align-self: center;
+    padding: 1rem;
+    opacity: 0.8;
+}
+
+.tarjeta-foto {
+    max-height: 200px;
+}
+
+.bien-encuestas {
+    background-color: #3cb371;
+}
+
+.bien-encuestas:hover {
+    background-color: #57bd85;
+}
+
+.mal-encuestas {
+    background-color: #ad2525;
+}
+
+.mal-encuestas:hover {
+    background-color: #c21c1c;
 }
