@@ -27,9 +27,9 @@ const Header = () => {
               <button className="btnn btnn-header ">Contacto</button>
             </div>
             <div className="col-auto col-md-auto ms-auto ">
-              <button href="#!" className="btnn btnn-header">
-                <p className="iniciar-sesion-h">Iniciar Sesión</p>
-              </button>
+              <a href="./login" className="btnn btnn-header iniciar-sesion-h">
+                <p className="btnn btnn-header iniciar-sesion-h">Iniciar Sesión</p>
+              </a>
             </div>
           </div>
           <div className="row justify-content-end"></div>

@@ -142,9 +142,9 @@ a {
 }
 
 .iniciar-sesion-h {
-    font-weight: 50;
-    font-style: italic;
-    font-family: var(--textFont);
+    background-color: var(--gris2);
+    color: var(--blanco);
+    font-size: 2rem;
 }
 
 @media (min-width: 768px) {

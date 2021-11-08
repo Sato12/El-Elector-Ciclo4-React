@@ -1,6 +1,5 @@
 import React from "react";
-import Sidebar from "../layout/Sidebar";
-import BarraListado from "../layout/BarraListado";
+//import Sidebar from "../layout/Sidebar";
 import styled from "@emotion/styled";
 
 const Candidatos = () => {
@@ -17,7 +16,7 @@ const Candidatos = () => {
               anteriores, entre otros. También se da un hipervínculo hacia una
               base de datos estatal para leer más características.
             </TextoEnunciado>
-            <BarraListado />
+            {/* <BarraListado /> */}
           </div>
         </main>
       </div>
