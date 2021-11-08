@@ -2,10 +2,11 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="app-header sticky-top">
+    <header className="app-header ">
+      {/*sticky-top*/}
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col col-md-8">
+          <div className="col col-md-8 justify-content-center">
             <p className="nombre-usuario">
               <span>El Elector</span>
             </p>
