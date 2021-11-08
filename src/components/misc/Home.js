@@ -9,7 +9,7 @@ const Home = () => {
       <div className="home-div container">
         <h1>Información para votar a tu alcance</h1>
         <div className="row justify-content-center">
-          <div className="col-12 col-md-7 ">
+          <div className="col-12 col-md-9 ">
             <h3>
               Somos una plataforma que centraliza la información de candidatos a
               elecciones. Con esta plataforma se busca aportar en la necesidad
