@@ -3,6 +3,9 @@ import {
   SELECCIONAR_CANDIDATO,
   CANDIDATO_MODAL,
   CERRAR_CMODAL,
+  ADMIN_TABLA,
+  MODAL_ADDFORM,
+  CLOSE_ADDFORM,
 } from "../../types";
 import CandidatosContext from "./candidatosContext";
 import candidatosReducer from "./candidatosReducer";
@@ -94,6 +97,8 @@ const CandidatosState = (props) => {
     candidatos: candidatosListaInicial,
     candidatoSelected: null,
     detalleModal: false,
+    modoTablaAdmin: true,
+    modalAddForm: false,
   };
 
   // Crear dispatch y state => Hook: useReducer
@@ -121,15 +126,42 @@ const CandidatosState = (props) => {
     });
   };
 
+  // Mostrar en admin candidatos o partidos
+  const setModoTablaAdmin = (modo) => {
+    dispatch({
+      type: ADMIN_TABLA,
+      payload: modo,
+    });
+  };
+
+  // Abrir el Form en Admin de agregar candidato
+  const openAddForm = () => {
+    dispatch({
+      type: MODAL_ADDFORM,
+    });
+  };
+
+  // Cerrar el Form en Admin de agregar candidato
+  const closeAddForm = () => {
+    dispatch({
+      type: CLOSE_ADDFORM,
+    });
+  };
+
   return (
     <CandidatosContext.Provider
       value={{
         candidatos: state.candidatos,
         candidatoSelected: state.candidatoSelected,
         detalleModal: state.detalleModal,
+        modoTablaAdmin: state.modoTablaAdmin,
+        modalAddForm: state.modalAddForm,
         selecCandidato,
         mostrarModalCandidato,
         cerrarModalCandidato,
+        setModoTablaAdmin,
+        openAddForm,
+        closeAddForm,
       }}
     >
       {props.children}

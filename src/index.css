@@ -578,3 +578,7 @@ aside {
 .modal-img {
     margin-top: 5rem;
 }
+
+.tabla-candi-editbott:hover {
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Button, Container, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import CandidatosContext from "../../context/candidatos/candidatosContext";
 
 const CandidatoDetail = () => {

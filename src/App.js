@@ -5,6 +5,7 @@ import Home from "./components/misc/Home";
 import Header from "./components/layout/Header";
 import Login from "./components/login/Login";
 import CandidatosState from "./context/candidatos/candidatosState";
+import Admin from "./components/misc/Admin";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/candidatos" element={<Candidatos />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     </CandidatosState>
