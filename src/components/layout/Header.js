@@ -32,7 +32,9 @@ const Header = () => {
               <button className="btnn btnn-header ">Sobre Nosotros</button>
             </div>
             <div className="col-auto col-md-auto">
-              <button className="btnn btnn-header ">Contacto</button>
+              <button className="btnn btnn-header "
+              onClick={() => navigate("/contacto")}
+              >Contacto</button>
             </div>
             <div className="col-auto col-md-auto ms-auto ">
               <p
