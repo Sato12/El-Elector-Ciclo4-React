@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import styled from "@emotion/styled";
+import CandidatosContext from "../../context/candidatos/candidatosContext";
 
 const TarjetaCandidato = ({ candidato }) => {
   const { id, nombre, partido, logo, posicion, encuestas, profesion, foto } =
     candidato;
+
+  const candidatosContext = useContext(CandidatosContext);
+  const { selecCandidato, mostrarModalCandidato } = candidatosContext;
 
   const [lugarEncuestas, setLugarEncuestas] = useState({
     mensaje: "",
@@ -25,6 +29,11 @@ const TarjetaCandidato = ({ candidato }) => {
       });
     }
   }, [encuestas]);
+
+  const mostrarDetalleCandidato = (id) => {
+    selecCandidato(id);
+    mostrarModalCandidato();
+  };
   return (
     <div className="container">
       <div className="card mb-3 mt-5 ">
@@ -73,7 +82,10 @@ const TarjetaCandidato = ({ candidato }) => {
               <div className="dropdown-divider mt-3"></div>
               <div className="row ">
                 <div className="col-12 d-flex justify-content-center ">
-                  <BotonMasInfo className="btnn btnn-primario ">
+                  <BotonMasInfo
+                    className="btnn btnn-primario "
+                    onClick={() => mostrarDetalleCandidato(id)}
+                  >
                     <FontAwesomeIcon
                       className="tajerta-icono-posicion m-4"
                       icon={faInfoCircle}
@@ -108,6 +120,7 @@ const BotonMasInfo = styled.button`
   padding-left: 0;
   padding-top: 0;
   padding-bottom: 0;
+  padding-right: 2rem;
   background-color: #5f4999;
   &:hover {
     background-color: #5a4886;

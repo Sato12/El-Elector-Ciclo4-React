@@ -536,3 +536,45 @@ aside {
 .mal-encuestas:hover {
     background-color: #c21c1c;
 }
+
+.modal-candidato-titulo {
+    flex: auto;
+}
+
+.modal-candidato-titulo h2 {
+    font-family: "Noticia Text", serif;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.modal-candidato-subtitulo {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    text-align: start;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.modal-candidato-parrafo {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.modal-candidato-propiedad {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 300;
+    margin-left: 1rem;
+}
+
+.modal-list {
+    margin-left: 1rem;
+}
+
+.modal-img {
+    margin-top: 5rem;
+}

@@ -1,56 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import BarraListado from "../layout/BarraListado";
 import styled from "@emotion/styled";
 import TarjetaCandidato from "./TarjetaCandidato";
-import logo from "../../Images/svg/logoColombiaHumana.jpg";
-import logo2 from "../../Images/svg/logo2.jpg";
-import logo3 from "../../Images/svg/logoParty3.jpg";
-import foto from "../../Images/svg/petro.jpg";
-import foto2 from "../../Images/cabal.jpg";
-import foto3 from "../../Images/fajardo.jpg";
+import CandidatosContext from "../../context/candidatos/candidatosContext";
+import CandidatoDetail from "./CandidatoDetail";
 
 const Candidatos = () => {
-  const candidatosLista = [
-    {
-      id: 1,
-      nombre: "Gustavo Petro Urrego",
-      partido: "Candidato de la Colombia Humana",
-      logo,
-      posicion: "Izquierda",
-      encuestas: true,
-      profesion: "Economista",
-      foto,
-    },
-    {
-      id: 2,
-      nombre: "Maria Fernanda Cabal",
-      partido: "Candidata del Centro Democrático",
-      logo: logo2,
-      posicion: "Derecha",
-      encuestas: true,
-      profesion: "Politologa",
-      foto: foto2,
-    },
-    {
-      id: 3,
-      nombre: "Sergio Fajardo",
-      partido: "Candidato de la Alianza Verde",
-      logo: logo3,
-      posicion: "Centro",
-      encuestas: false,
-      profesion: "Matemático",
-      foto: foto3,
-    },
-  ];
-
-  const [candidatos, setCandidatos] = useState([]);
+  const candidatosContext = useContext(CandidatosContext);
+  const { candidatos, candidatoSelected } = candidatosContext;
 
   useEffect(() => {
-    if (candidatosLista) setCandidatos(candidatosLista);
+    if (candidatos.length === 0) return;
     // eslint-disable-next-line
   }, []);
   return (
     <div className="contenedor-app">
+      {candidatoSelected ? <CandidatoDetail /> : null}
       <div className="seccion-principal">
         <main>
           <div className="contenedor-tareas">
@@ -83,7 +48,7 @@ const Title = styled.h1`
 `;
 
 const TextoEnunciado = styled.p`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: "Noticia Text", serif;
   margin-top: 3rem;
 `;
