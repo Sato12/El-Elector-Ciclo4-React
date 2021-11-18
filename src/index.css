@@ -641,3 +641,27 @@ aside {
         width: 130px;
     }
 }
+
+.contenedor-contacto {
+    display: flex;
+    min-height: 100vh;
+    text-align: center;
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-contacto:h1 {
+    font-family: "Noticia Text", serif;
+    text-align: center;
+}
+
+.form {
+    font-family: "Noticia Text", serif;
+    font-weight: 900;
+    font-size: 20rem;
+    display: flex;
+    position: absolute;
+}

@@ -6,6 +6,7 @@ import Header from "./components/layout/Header";
 import Login from "./components/login/Login";
 import CandidatosState from "./context/candidatos/candidatosState";
 import Admin from "./components/misc/Admin";
+import Contacto from "./components/Contacto/ContactoForm"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/candidatos" element={<Candidatos />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/Contacto" element={<Contacto/>} />
         </Routes>
       </Router>
     </CandidatosState>
