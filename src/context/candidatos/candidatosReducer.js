@@ -5,6 +5,7 @@ import {
   ADMIN_TABLA,
   MODAL_ADDFORM,
   CLOSE_ADDFORM,
+  AGREGAR_CANDIDATO,
 } from "../../types";
 
 export default (state, action) => {
@@ -31,6 +32,9 @@ export default (state, action) => {
 
     case CLOSE_ADDFORM:
       return { ...state, modalAddForm: false };
+
+    case AGREGAR_CANDIDATO:
+      return { ...state, candidatos: [...state.candidatos, action.payload] };
 
     default:
       return state;

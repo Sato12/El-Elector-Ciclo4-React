@@ -582,3 +582,62 @@ aside {
 .tabla-candi-editbott:hover {
     cursor: pointer;
 }
+
+.form-gap-pequeño {
+    width: fit-content;
+    box-sizing: border-box;
+    width: 400px;
+    margin-left: 2rem;
+    border-style: groove;
+}
+
+.form-gap-grande {
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin-left: 2rem;
+    border-style: groove;
+}
+
+.form-gap-pequeño-label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    display: inline-block;
+    text-align: right;
+    width: 90px;
+}
+
+.form-gap-grande-label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    display: inline-block;
+    text-align: right;
+    width: 90px;
+}
+
+.form-sum-icon {
+    margin-left: 1.5rem;
+    color: var(--gris3);
+}
+
+.form-sum-icon:hover {
+    cursor: pointer;
+}
+
+.form-gap-adicional {
+    width: fit-content;
+    box-sizing: border-box;
+    width: 400px;
+    margin-left: 12rem;
+    border-style: groove;
+}
+
+@media (max-width: 992px) {
+    .form-gap-pequeño,
+    .form-gap-adicional {
+        width: 130px;
+    }
+}

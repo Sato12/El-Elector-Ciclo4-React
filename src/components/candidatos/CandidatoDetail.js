@@ -49,7 +49,7 @@ const CandidatoDetail = () => {
               <h2 className="modal-candidato-subtitulo">
                 Cargos previos:
                 <ol>
-                  {cargos.map((cargo) => (
+                  {Object.values(cargos).map((cargo) => (
                     <li className="modal-list" key={cargo}>
                       <p className="modal-candidato-propiedad">{cargo}.</p>
                     </li>
@@ -59,7 +59,7 @@ const CandidatoDetail = () => {
               <h2 className="modal-candidato-subtitulo">
                 Formación académica:
                 <ol>
-                  {formacion.map((item) => (
+                  {Object.values(formacion).map((item) => (
                     <li className="modal-list" key={item}>
                       <p className="modal-candidato-propiedad">{item}.</p>
                     </li>
