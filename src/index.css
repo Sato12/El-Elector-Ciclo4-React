@@ -1,667 +1,666 @@
 :root {
-    --blanco: #ffffff;
-    --gris0: #c1c9cf;
-    --gris1: #edf2f6;
-    --gris2: #2f3848;
-    --gris3: #1a202d;
-    --negro: #000000;
-    --headingFont: "Raleway", sans-serif;
-    --textFont: "Roboto", sans-serif;
+  --blanco: #ffffff;
+  --gris0: #c1c9cf;
+  --gris1: #edf2f6;
+  --gris2: #2f3848;
+  --gris3: #1a202d;
+  --negro: #000000;
+  --headingFont: "Raleway", sans-serif;
+  --textFont: "Roboto", sans-serif;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-    box-sizing: border-box;
-    height: 100%;
-    font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
 }
 
 body {
-    min-height: 100%;
-    background-color: var(--gris1);
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-family: var(--textFont);
+  min-height: 100%;
+  background-color: var(--gris1);
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: var(--textFont);
 }
 
 h2 {
-    font-family: var(--headingFont);
-    font-weight: 900;
-    margin: 0 0 4rem 0;
-    text-align: center;
-    color: var(--gris2);
+  font-family: var(--headingFont);
+  font-weight: 900;
+  margin: 0 0 4rem 0;
+  text-align: center;
+  color: var(--gris2);
 }
 
 h1 span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 h2 {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: var(--gris2);
+  text-decoration: none;
+  color: var(--gris2);
 }
 
 .home-div {
-    margin-top: 10rem;
-    background-color: #e5edf5;
-    padding: 3rem;
+  margin-top: 10rem;
+  background-color: #e5edf5;
+  padding: 3rem;
 }
 
 .home-div h1 {
-    font-weight: 950;
-    font-size: 5rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
+  font-weight: 950;
+  font-size: 5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
 }
 
 .home-div h3 {
-    font-weight: 300;
-    font-size: 2.2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 2rem;
-    opacity: 0.7;
+  font-weight: 300;
+  font-size: 2.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 2rem;
+  opacity: 0.7;
 }
-
 
 /** BOTONES **/
 
 .btnn {
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border-radius: 0.3rem;
-    border: none;
-    transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
 .btnn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btnn-header {
-    background-color: var(--gris2);
-    color: var(--blanco);
-    font-size: 2rem;
+  background-color: var(--gris2);
+  color: var(--blanco);
+  font-size: 2rem;
 }
 
 .btnn-header:hover {
-    background: var(--gris3);
+  background: var(--gris3);
 }
 
 .btnn-primario {
-    background-color: var(--gris2);
-    color: var(--blanco);
+  background-color: var(--gris2);
+  color: var(--blanco);
 }
 
 .btnn-primario:hover {
-    background: var(--gris3);
+  background: var(--gris3);
 }
 
 .btnn-secundario {
-    background-color: var(--gris0);
+  background-color: var(--gris0);
 }
 
 .btnn-secundario:hover {
-    background: var(--gris1);
+  background: var(--gris1);
 }
 
 .btnn-block {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .btnn-submit:hover {
-    background-color: var(--gris2);
+  background-color: var(--gris2);
 }
 
 .btnn-blank {
-    margin: 0;
-    padding: 0;
-    display: block;
-    background-color: transparent;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: transparent;
 }
 
 .iniciar-sesion-h {
-    background-color: var(--gris2);
-    color: var(--blanco);
-    font-size: 2rem;
+  background-color: var(--gris2);
+  color: var(--blanco);
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
-    .contenedor-app {
-        display: flex;
-        min-height: 100vh;
-    }
-    aside {
-        background-color: var(--blanco);
-        flex: 0 0 300px;
-    }
-    .seccion-principal {
-        flex: 1;
-    }
+  .contenedor-app {
+    display: flex;
+    min-height: 100vh;
+  }
+  aside {
+    background-color: var(--blanco);
+    flex: 0 0 300px;
+  }
+  .seccion-principal {
+    flex: 1;
+  }
 }
-
 
 /* BARRA LATERAL */
 
 aside {
-    padding: 3rem;
+  padding: 3rem;
 }
 
 .formulario-nuevo-proyecto {
-    margin-top: 6rem;
+  margin-top: 6rem;
 }
 
 .formulario-nuevo-proyecto .input-text {
-    border-bottom: 1px solid var(--gris2);
-    border-radius: 0;
-    background-color: var(--gris1);
+  border-bottom: 1px solid var(--gris2);
+  border-radius: 0;
+  background-color: var(--gris1);
 }
 
 .formulario-nuevo-proyecto .input-text::placeholder {
-    color: var(--gris2);
+  color: var(--gris2);
 }
 
 .proyectos {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
 
 .listado-proyectos li {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .listado-proyectos li a {
-    font-size: 1.4rem;
-    color: var(--gris2);
-    line-height: 1.5;
-    font-weight: 300;
+  font-size: 1.4rem;
+  color: var(--gris2);
+  line-height: 1.5;
+  font-weight: 300;
 }
 
 .app-header {
-    display: flex;
-    margin-bottom: 0rem;
-    justify-content: center;
-    background-color: var(--gris2);
-    padding: 4rem;
-    padding-bottom: 3rem;
-    font-family: "Playfair Display SC", serif;
-    font-size: 4rem;
+  display: flex;
+  margin-bottom: 0rem;
+  justify-content: center;
+  background-color: var(--gris2);
+  padding: 4rem;
+  padding-bottom: 3rem;
+  font-family: "Playfair Display SC", serif;
+  font-size: 4rem;
 }
 
 .app-header-sec {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--gris2);
-    padding: 4rem;
-    font-family: "Playfair Display SC", serif;
-    font-size: 20rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--gris2);
+  padding: 4rem;
+  font-family: "Playfair Display SC", serif;
+  font-size: 20rem;
 }
 
 .nombre-usuario {
-    text-align: center;
-    color: var(--blanco);
-    font-size: 5.5rem;
-    margin: 0;
+  text-align: center;
+  color: var(--blanco);
+  font-size: 5.5rem;
+  margin: 0;
 }
 
 .nombre-usuario span {
-    font-weight: 900;
-    font-size: 7rem;
+  font-weight: 900;
+  font-size: 7rem;
 }
 
 .nombre-usuario span:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .nav-principal a {
-    color: var(--blanco);
-    text-align: left;
-    text-decoration: none;
-    font-family: var(--headingFont);
-    font-weight: 100;
+  color: var(--blanco);
+  text-align: left;
+  text-decoration: none;
+  font-family: var(--headingFont);
+  font-weight: 100;
 }
 
 .nav-principal a:first-of-type {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
-
 
 /** Formulario crear y editar tareas **/
 
 .formulario {
-    background-color: var(--gris3);
-    padding: 4rem;
+  background-color: var(--gris3);
+  padding: 4rem;
 }
 
 .formulario form {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .contenedor-input {
-    display: flex;
+  display: flex;
 }
 
 .contenedor-input label {
-    margin-bottom: 1rem;
-    color: var(--blanco);
+  margin-bottom: 1rem;
+  color: var(--blanco);
 }
 
 .input-text {
-    padding: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    flex: 1;
-    width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  flex: 1;
+  width: 100%;
 }
-
 
 /** TAREAS LISTADO **/
 
 .contenedor-tareas {
-    margin-top: 5rem;
-    padding-left: 19rem;
-    padding-right: 19rem;
+  margin-top: 5rem;
+  padding-left: 19rem;
+  padding-right: 19rem;
 }
 
 @media (max-width: 768px) {
-    .contenedor-tareas {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+  .contenedor-tareas {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .nav-bar-candidatos {
-    max-width: 100%;
-    display: flex;
+  max-width: 100%;
+  display: flex;
 }
 
 .barra-candidatos {
-    background-color: #e3f2fd;
-    align-items: center;
-    border-radius: 2rem;
-    margin-top: 4rem;
+  background-color: #e3f2fd;
+  align-items: center;
+  border-radius: 2rem;
+  margin-top: 4rem;
 }
 
 .barra-candidatos p {
-    font-size: 2rem;
-    display: flex;
+  font-size: 2rem;
+  display: flex;
 }
 
 .barra-candidatos img {
-    margin-right: 1rem;
-    margin-left: 8rem;
-    margin-top: 0.7rem;
+  margin-right: 1rem;
+  margin-left: 8rem;
+  margin-top: 0.7rem;
 }
 
 @media (max-width: 768px) {
-    .barra-candidatos {
-        align-items: center;
-        width: 100%;
-    }
-    .barra-candidatos button {
-        display: none;
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-    .barra-candidatos img {
-        align-content: center;
-    }
+  .barra-candidatos {
+    align-items: center;
+    width: 100%;
+  }
+  .barra-candidatos button {
+    display: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .barra-candidatos img {
+    align-content: center;
+  }
 }
 
 .listado-tareas {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .tarea {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--blanco);
-    padding: 0.5rem 2rem;
-    align-items: center;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--blanco);
+  padding: 0.5rem 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
 }
 
 .sombra {
-    -webkit-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
-    -moz-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
-    box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  -webkit-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  -moz-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
 }
 
 .sombra-dark {
-    -webkit-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
-    -moz-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
-    box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
 }
 
 .tarea .acciones .btn:first-of-type {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .tarea p {
-    font-size: 1.6rem;
-    flex: 1;
-    padding-right: 2rem;
+  font-size: 1.6rem;
+  flex: 1;
+  padding-right: 2rem;
 }
 
 .tarea .btn {
-    padding: 0.8rem;
-    font-size: 1.4rem;
-    border-radius: 0;
-    margin: 0;
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  border-radius: 0;
+  margin: 0;
 }
 
 .estado {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .estado button,
 .mensaje {
-    font-weight: 900;
-    font-family: var(--textFont);
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    border: none;
+  font-weight: 900;
+  font-family: var(--textFont);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
 }
 
 .mensaje {
-    text-align: center;
-    font-size: 1.6rem;
-    border-radius: 0;
+  text-align: center;
+  font-size: 1.6rem;
+  border-radius: 0;
 }
 
 .mensaje:hover {
-    cursor: default;
+  cursor: default;
 }
 
 .completo,
 .correcto {
-    background-color: rgba(154, 252, 154, 0.3);
-    color: var(--gris3);
+  background-color: rgba(154, 252, 154, 0.3);
+  color: var(--gris3);
 }
 
 .incompleto {
-    background-color: rgba(255, 178, 178, 0.4);
-    color: var(--gris3);
+  background-color: rgba(255, 178, 178, 0.4);
+  color: var(--gris3);
 }
 
 .error {
-    max-width: 600px;
-    margin: 2rem auto 0 auto;
-    background-color: rgb(170, 0, 0);
-    color: var(--blanco);
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  background-color: rgb(170, 0, 0);
+  color: var(--blanco);
 }
 
 .tarea-enter,
 .proyecto-enter {
-    opacity: 0;
+  opacity: 0;
 }
 
 .tarea-enter-active,
 .proyecto-enter-active {
-    opacity: 1;
-    transition: opacity 200ms;
+  opacity: 1;
+  transition: opacity 200ms;
 }
 
 .tarea-exit,
 .proyecto-exit {
-    opacity: 1;
+  opacity: 1;
 }
 
 .tarea-exit-active,
 .proyecto-exit-active {
-    opacity: 0;
-    transition: opacity 200ms;
+  opacity: 0;
+  transition: opacity 200ms;
 }
 
 .form-usuario {
-    background-color: var(--gris2);
-    height: 100vh;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: var(--gris2);
+  height: 60vh;
+  min-height: 680px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  text-align: center;
 }
 
 .contenedor-form {
-    padding: 5rem 3rem;
-    max-width: 500px;
-    width: 95%;
-    background-color: var(--blanco);
-    border-radius: 1rem;
+  padding: 5rem 3rem;
+  max-width: 500px;
+  width: 95%;
+  background-color: var(--blanco);
+  border-radius: 1rem;
+  font-size: medium;
+  font-weight: 700;
 }
 
 .campo-form {
-    display: flex;
-    margin-bottom: 2rem;
-    align-items: center;
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 
 .campo-form:last-of-type {
-    margin: 0;
+  margin: 0;
 }
 
 .campo-form label {
-    flex: 0 0 100px;
-    font-family: var(--textFont);
+  flex: 0 0 100px;
+  font-family: var(--textFont);
 }
 
 .campo-form input[type="password"],
 .campo-form input[type="email"],
 .campo-form input[type="text"] {
-    border: 1px solid #e1e1e1;
-    padding: 1rem;
-    flex: 1;
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  flex: 1;
 }
 
 .enlace-cuenta {
-    margin-top: 2rem;
-    display: block;
-    opacity: 0.7;
+  margin-top: 2rem;
+  display: block;
+  opacity: 0.7;
 }
 
 .card {
-    border-radius: 2em;
-    box-shadow: 1px 1px 1px 1px #acafb4;
+  border-radius: 2em;
+  box-shadow: 1px 1px 1px 1px #acafb4;
 }
 
 .titulo-tarjeta-canditatos {
-    font-family: "Noticia Text", serif;
-    font-weight: 700;
-    font-size: 3rem;
-    text-align: start;
-    /* border-right: 1px dashed #333; */
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: start;
+  /* border-right: 1px dashed #333; */
 }
 
 .texto-tarjeta-canditatos {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .tajeta-logo {
-    max-width: 6rem;
-    max-height: 6rem;
-    margin-bottom: -1.5rem;
+  max-width: 6rem;
+  max-height: 6rem;
+  margin-bottom: -1.5rem;
 }
 
 .tajerta-icono-posicion {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .numero-de-tarjeta {
-    align-self: center;
-    padding: 1rem;
-    opacity: 0.8;
+  align-self: center;
+  padding: 1rem;
+  opacity: 0.8;
 }
 
 .tarjeta-foto {
-    max-height: 200px;
+  max-height: 200px;
 }
 
 .bien-encuestas {
-    background-color: #3cb371;
+  background-color: #3cb371;
 }
 
 .bien-encuestas:hover {
-    background-color: #57bd85;
+  background-color: #57bd85;
 }
 
 .mal-encuestas {
-    background-color: #ad2525;
+  background-color: #ad2525;
 }
 
 .mal-encuestas:hover {
-    background-color: #c21c1c;
+  background-color: #c21c1c;
 }
 
 .modal-candidato-titulo {
-    flex: auto;
+  flex: auto;
 }
 
 .modal-candidato-titulo h2 {
-    font-family: "Noticia Text", serif;
-    font-weight: 900;
-    font-size: 3rem;
+  font-family: "Noticia Text", serif;
+  font-weight: 900;
+  font-size: 3rem;
 }
 
 .modal-candidato-subtitulo {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-weight: 900;
-    font-size: 1.7rem;
-    text-align: start;
-    margin-bottom: 0;
-    display: flex;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 900;
+  font-size: 1.7rem;
+  text-align: start;
+  margin-bottom: 0;
+  display: flex;
 }
 
 .modal-candidato-parrafo {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: 1.1rem;
-    text-align: justify;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .modal-candidato-propiedad {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-weight: 300;
-    margin-left: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 300;
+  margin-left: 1rem;
 }
 
 .modal-list {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .modal-img {
-    margin-top: 5rem;
+  margin-top: 5rem;
 }
 
 .tabla-candi-editbott:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form-gap-pequeño {
-    width: fit-content;
-    box-sizing: border-box;
-    width: 400px;
-    margin-left: 2rem;
-    border-style: groove;
+  width: fit-content;
+  box-sizing: border-box;
+  width: 400px;
+  margin-left: 2rem;
+  border-style: groove;
 }
 
 .form-gap-grande {
-    width: fit-content;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    width: 400px;
-    height: 200px;
-    margin-left: 2rem;
-    border-style: groove;
+  width: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin-left: 2rem;
+  border-style: groove;
 }
 
 .form-gap-pequeño-label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.3rem;
-    display: inline-block;
-    text-align: right;
-    width: 90px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  display: inline-block;
+  text-align: right;
+  width: 90px;
 }
 
 .form-gap-grande-label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.3rem;
-    display: inline-block;
-    text-align: right;
-    width: 90px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  display: inline-block;
+  text-align: right;
+  width: 90px;
 }
 
 .form-sum-icon {
-    margin-left: 1.5rem;
-    color: var(--gris3);
+  margin-left: 1.5rem;
+  color: var(--gris3);
 }
 
 .form-sum-icon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form-gap-adicional {
-    width: fit-content;
-    box-sizing: border-box;
-    width: 400px;
-    margin-left: 12rem;
-    border-style: groove;
+  width: fit-content;
+  box-sizing: border-box;
+  width: 400px;
+  margin-left: 12rem;
+  border-style: groove;
 }
 
 @media (max-width: 992px) {
-    .form-gap-pequeño,
-    .form-gap-adicional {
-        width: 130px;
-    }
+  .form-gap-pequeño,
+  .form-gap-adicional {
+    width: 130px;
+  }
 }
 
 .contenedor-contacto {
-    display: flex;
-    min-height: 100vh;
-    text-align: center;
-    height: 100vh;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contenedor-contacto:h1 {
-    font-family: "Noticia Text", serif;
-    text-align: center;
+  font-family: "Noticia Text", serif;
+  text-align: center;
 }
 
 .form {
-    font-family: "Noticia Text", serif;
-    font-weight: 900;
-    font-size: 20rem;
-    display: flex;
-    position: absolute;
+  font-family: "Noticia Text", serif;
+  font-weight: 900;
+  font-size: 20rem;
+  display: flex;
+  position: absolute;
 }
