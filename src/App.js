@@ -10,6 +10,15 @@ import AuthState from "./context/auth/authState";
 import Admin from "./components/misc/Admin";
 import Contacto from "./components/Contacto/ContactoForm";
 import Registro from "./components/login/Registro";
+import tokenAuth from "./config/authToken";
+import RutaPrivada from "./components/ruta/RutaPrivada";
+
+// Revisar si hay token
+const token = localStorage.getItem("token");
+
+if (token) {
+  tokenAuth(token);
+}
 
 function App() {
   return (
@@ -22,7 +31,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/candidatos" element={<Candidatos />} />
               <Route path="/Login" element={<Login />} />
-              <Route path="/admin" element={<Admin />} />
+              <RutaPrivada path="/admin" element={<Admin />} />
               <Route path="/Contacto" element={<Contacto />} />
               <Route path="/registro" element={<Registro />} />
             </Routes>

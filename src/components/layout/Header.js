@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import authContext from "../../context/auth/authContext";
 
 const Header = () => {
   const navigate = useNavigate();
+
+  const authcontext = useContext(authContext);
+  const { usuario, usuarioAutenticado, cerrarSesion } = authcontext;
+
+  useEffect(() => {
+    usuarioAutenticado();
+  }, []);
+
+  const handleCerrarSesion = () => {
+    navigate("/");
+    cerrarSesion();
+  };
 
   return (
     <header className="app-header ">
@@ -32,17 +45,29 @@ const Header = () => {
               <button className="btnn btnn-header ">Sobre Nosotros</button>
             </div>
             <div className="col-auto col-md-auto">
-              <button className="btnn btnn-header "
-              onClick={() => navigate("/contacto")}
-              >Contacto</button>
+              <button
+                className="btnn btnn-header "
+                onClick={() => navigate("/contacto")}
+              >
+                Contacto
+              </button>
             </div>
             <div className="col-auto col-md-auto ms-auto ">
-              <p
-                className="btnn btnn-header iniciar-sesion-h"
-                onClick={() => navigate("/login")}
-              >
-                Iniciar Sesión
-              </p>
+              {usuario ? (
+                <p
+                  className="btnn btnn-header iniciar-sesion-h"
+                  onClick={handleCerrarSesion}
+                >
+                  Cerrar Sesión
+                </p>
+              ) : (
+                <p
+                  className="btnn btnn-header iniciar-sesion-h"
+                  onClick={() => navigate("/login")}
+                >
+                  Iniciar Sesión
+                </p>
+              )}
             </div>
           </div>
           <div className="row justify-content-end"></div>

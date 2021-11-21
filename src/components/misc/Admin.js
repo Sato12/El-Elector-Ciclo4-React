@@ -1,9 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SideBar from "../layout/Sidebar";
 import CandidatosContext from "../../context/candidatos/candidatosContext";
 import TablaCandidatosAdmin from "../layout/TablaCandidatosAdmin";
+import authContext from "../../context/auth/authContext";
 
 const Admin = () => {
+  // Ver si hay token
+  const authcontext = useContext(authContext);
+  const { usuarioAutenticado } = authcontext;
+
+  useEffect(() => {
+    usuarioAutenticado();
+  }, []);
+
   const candidatosContext = useContext(CandidatosContext);
   const { modoTablaAdmin } = candidatosContext;
 

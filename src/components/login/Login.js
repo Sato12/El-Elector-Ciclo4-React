@@ -1,56 +1,53 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import authContext from "../../context/auth/authContext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-
-const MySwal = withReactContent(Swal);
+import AlertaContext from "../../context/alertas/alertasContext";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function validateForm() {
-    if (email.length > 0 && password.length > 0) {
-      MySwal.fire({
-        title: "Gato para introducir mas de un campo.",
-        width: 600,
-        padding: "3em",
-        background:
-          "#fff url(https://sweetalert2.github.io/#examplesimages/trees.png)",
-        backdrop: `
-              rgba(0,0,123,0.4)
-              url("https://image.jimcdn.com/app/cms/image/transf/none/path/s7a7866289313eaaa/image/i5f8936f5a2ca1dd6/version/1405717936/image.gif")
-              left top
-              no-repeat
-            `,
-      });
-    }
-    return email.length > 0 && password.length > 0;
-  }
+  const authcontext = useContext(authContext);
+  const { fallo, iniciarSesion, mensaje, autenticado, revisarAlerta } =
+    authcontext;
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (
-      e.target.email.value === "prueba@prueba.com" &&
-      e.target.password.value === "12345678"
-    ) {
-      MySwal.fire({
-        icon: "success",
-        title: <p>Bienvenido ElElector</p>,
-        footer: "Pagina en proceso",
-      });
-    } else {
-      MySwal.fire({
-        icon: "success",
-        title: <p>Sus credenciales no han funcionado con exito 🦊</p>,
-        footer: "Pagina en proceso",
-      }).then((result) => {
-        window.location.replace("/");
-      });
+  const alertaContext = useContext(AlertaContext);
+  const { mostrarAlerta } = alertaContext;
+
+  useEffect(() => {
+    if (autenticado) {
+      navigate("/candidatos");
     }
-  }
+
+    if (fallo) {
+      mostrarAlerta(mensaje, "error");
+      return;
+    }
+  }, [revisarAlerta, autenticado]);
+
+  const validateForm = () => {
+    if (email.trim() === "" || password.trim() === "") {
+      mostrarAlerta("Todos los campos son obligatorios.", "error");
+      return false;
+    }
+    if (password.trim().length < 6) {
+      mostrarAlerta("La contraseña debe ser mínimo de 6 carácteres", "error");
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    iniciarSesion({ email, password });
+  };
 
   return (
     <div className="Login">
@@ -72,7 +69,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button size="lg" type="submit">
           Login
         </Button>
       </Form>

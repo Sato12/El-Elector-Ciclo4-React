@@ -12,7 +12,7 @@ const Registro = () => {
     if (autenticado) {
       navigate("/candidatos");
     }
-  }, []);
+  }, [autenticado]);
 
   const [user, setUser] = useState({
     nombre: "",
