@@ -1,20 +1,17 @@
 import React, { useContext, useEffect } from "react";
-import { Route, useNavigate } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 import authContext from "../../context/auth/authContext";
+import Admin from "../misc/Admin";
 
 const RutaPrivada = ({ component: Component, ...props }) => {
   const authcontext = useContext(authContext);
-  const { autenticado } = authcontext;
+  const { autenticado, usuarioAutenticado } = authcontext;
 
-  const navigate = useNavigate();
-  return (
-    <Route
-      {...props}
-      render={(props) =>
-        autenticado ? navigate("/") : <Component {...props} />
-      }
-    />
-  );
+  useEffect(() => {
+    usuarioAutenticado();
+  }, []);
+
+  return <>{autenticado ? <Admin /> : <Navigate to="/" />}</>;
 };
 
 export default RutaPrivada;

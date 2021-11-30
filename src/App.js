@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Navigate } from "react-router";
 import Candidatos from "./components/candidatos/Candidatos";
 import Home from "./components/misc/Home";
 import Header from "./components/layout/Header";
@@ -31,7 +32,12 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/candidatos" element={<Candidatos />} />
               <Route path="/Login" element={<Login />} />
-              <RutaPrivada path="/admin" element={<Admin />} />
+              {/* {token ? (
+                <Route path="/admin" element={<Admin />} />
+              ) : (
+                <Route path="/admin" element={<Navigate to="/" />} />
+              )} */}
+              <Route path="/admin" element={<RutaPrivada />} />
               <Route path="/Contacto" element={<Contacto />} />
               <Route path="/registro" element={<Registro />} />
             </Routes>

@@ -6,15 +6,20 @@ const Header = () => {
   const navigate = useNavigate();
 
   const authcontext = useContext(authContext);
-  const { usuario, usuarioAutenticado, cerrarSesion } = authcontext;
+  const { usuario, autenticado, usuarioAutenticado, cerrarSesion } =
+    authcontext;
 
   useEffect(() => {
     usuarioAutenticado();
-  }, []);
+  }, [autenticado]);
 
   const handleCerrarSesion = () => {
     navigate("/");
     cerrarSesion();
+  };
+
+  const goToAdmin = () => {
+    navigate("/admin");
   };
 
   return (
@@ -54,12 +59,20 @@ const Header = () => {
             </div>
             <div className="col-auto col-md-auto ms-auto ">
               {usuario ? (
-                <p
-                  className="btnn btnn-header iniciar-sesion-h"
-                  onClick={handleCerrarSesion}
-                >
-                  Cerrar Sesión
-                </p>
+                <div className="d-flex">
+                  <p
+                    className="btnn btnn-header iniciar-sesion-h"
+                    onClick={handleCerrarSesion}
+                  >
+                    Cerrar Sesión
+                  </p>
+                  <p
+                    className="btnn btnn-header iniciar-sesion-h"
+                    onClick={goToAdmin}
+                  >
+                    Admin
+                  </p>
+                </div>
               ) : (
                 <p
                   className="btnn btnn-header iniciar-sesion-h"

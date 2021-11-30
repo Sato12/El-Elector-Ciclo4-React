@@ -15,7 +15,12 @@ export default (state, action) => {
       return { ...state, autenticado: true, mensaje: null, fallo: false };
 
     case OBTENER_USUARIO:
-      return { ...state, usuario: action.payload, mensaje: null };
+      return {
+        ...state,
+        usuario: action.payload,
+        mensaje: null,
+        autenticado: true,
+      };
 
     case REGISTRO_ERROR:
     case LOGIN_ERROR:
