@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Modal } from "react-bootstrap";
 import CandidatosContext from "../../context/candidatos/candidatosContext";
 

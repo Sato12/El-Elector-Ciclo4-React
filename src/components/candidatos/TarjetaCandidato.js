@@ -5,17 +5,8 @@ import styled from "@emotion/styled";
 import CandidatosContext from "../../context/candidatos/candidatosContext";
 
 const TarjetaCandidato = ({ candidato, index }) => {
-  const {
-    _id,
-    nombre,
-    partido,
-    logo,
-    posicion,
-    encuestas,
-    profesion,
-    foto,
-    fId,
-  } = candidato;
+  const { _id, nombre, partido, logo, posicion, encuestas, profesion, foto } =
+    candidato;
 
   const candidatosContext = useContext(CandidatosContext);
   const { selecCandidato, mostrarModalCandidato } = candidatosContext;

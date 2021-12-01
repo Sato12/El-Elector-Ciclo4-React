@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import authContext from "../../context/auth/authContext";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import "./Login.css";
 import AlertaContext from "../../context/alertas/alertasContext";
 
@@ -27,6 +26,7 @@ export default function Login() {
       mostrarAlerta(mensaje, "error");
       return;
     }
+    // eslint-disable-next-line
   }, [revisarAlerta, autenticado]);
 
   const validateForm = () => {
@@ -50,29 +50,49 @@ export default function Login() {
   };
 
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+    <div className="form-usuario">
+      <div className="contenedor-form sombra-dark">
+        <h1 className="mb-5">Iniciar Sesión</h1>
+        <Form onSubmit={handleSubmit}>
+          <div className="login-campo-form">
+            <Form.Group size="lg" controlId="email" className="d-flex">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+          </div>
+          <div className="login-campo-form">
+            <Form.Group size="lg" controlId="password" className="d-flex ml-2">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                className="d-{block}"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+          </div>
+          <input
+            size="lg"
+            className="btnn btnn-primario btnn-block"
+            type="submit"
+            value="Login"
           />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button size="lg" type="submit">
-          Login
-        </Button>
-      </Form>
+        </Form>
+        <p className="mt-4">
+          ¿No tienes cuenta?
+          <button
+            onClick={() => navigate("/registro")}
+            className="ms-4 btnn btnn-primario"
+          >
+            Registrate
+          </button>
+        </p>
+      </div>
     </div>
   );
 }

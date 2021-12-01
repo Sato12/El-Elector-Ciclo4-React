@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import {
   SELECCIONAR_CANDIDATO,
   CANDIDATO_MODAL,
@@ -14,13 +14,6 @@ import {
 import CandidatosContext from "./candidatosContext";
 import candidatosReducer from "./candidatosReducer";
 import clienteAxios from "../../config/axios";
-
-import logo from "../../Images/svg/logoColombiaHumana.jpg";
-import logo2 from "../../Images/svg/logo2.jpg";
-import logo3 from "../../Images/svg/logoParty3.jpg";
-import foto from "../../Images/svg/petro.jpg";
-import foto2 from "../../Images/cabal.jpg";
-import foto3 from "../../Images/fajardo.jpg";
 
 const CandidatosState = (props) => {
   const initialState = {
@@ -111,10 +104,7 @@ const CandidatosState = (props) => {
     console.log(`editando el candidato con id ${candidato._id}`);
     console.log(candidato);
     try {
-      const respuesta = await clienteAxios.put(
-        `/api/candidatos/${candidato._id}`,
-        candidato
-      );
+      await clienteAxios.put(`/api/candidatos/${candidato._id}`, candidato);
       dispatch({
         type: CONTAR_EDITS,
       });

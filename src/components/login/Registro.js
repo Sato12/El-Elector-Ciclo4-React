@@ -12,6 +12,7 @@ const Registro = () => {
     if (autenticado) {
       navigate("/candidatos");
     }
+    // eslint-disable-next-line
   }, [autenticado]);
 
   const [user, setUser] = useState({
@@ -115,7 +116,12 @@ const Registro = () => {
             />
           </div>
         </form>
-        <a>Volver a iniciar sesión</a>
+        <button
+          onClick={() => navigate("/login")}
+          className="ms-4 btnn btnn-primario"
+        >
+          Volver a inicio de sesión
+        </button>
       </div>
     </div>
   );

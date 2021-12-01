@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import BarraListado from "../layout/BarraListado";
 import styled from "@emotion/styled";
 import TarjetaCandidato from "./TarjetaCandidato";

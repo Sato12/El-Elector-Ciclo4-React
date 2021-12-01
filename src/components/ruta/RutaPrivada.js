@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import authContext from "../../context/auth/authContext";
 import Admin from "../misc/Admin";
 
@@ -9,6 +9,7 @@ const RutaPrivada = ({ component: Component, ...props }) => {
 
   useEffect(() => {
     usuarioAutenticado();
+    // eslint-disable-next-line
   }, []);
 
   return <>{autenticado ? <Admin /> : <Navigate to="/" />}</>;

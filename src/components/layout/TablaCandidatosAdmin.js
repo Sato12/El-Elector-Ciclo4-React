@@ -21,6 +21,7 @@ const TablaCandidatosAdmin = () => {
 
   useEffect(() => {
     obtenerCandidatosUsuario();
+    // eslint-disable-next-line
   }, [numberEdits]);
 
   const mostrarDetalleCandidato = (id) => {

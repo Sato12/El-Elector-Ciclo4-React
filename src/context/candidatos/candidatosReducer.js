@@ -11,6 +11,7 @@ import {
   ELIMINAR_CANDIDATO,
 } from "../../types";
 
+// eslint-disable-next-line
 export default (state, action) => {
   switch (action.type) {
     case SELECCIONAR_CANDIDATO:

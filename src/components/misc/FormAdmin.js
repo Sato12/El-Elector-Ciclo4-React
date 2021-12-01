@@ -40,7 +40,6 @@ const FormAdmin = () => {
   };
   const [candidatoForm, setCandidatoForm] = useState(initialState);
   const {
-    fId,
     nombre,
     fullNombre,
     descripcionBreve,
@@ -50,11 +49,9 @@ const FormAdmin = () => {
     formacion,
     logo,
     posicion,
-    encuestas,
     profesion,
     foto,
     sigep,
-    idDB,
   } = candidatoForm;
 
   useEffect(() => {
@@ -84,6 +81,7 @@ const FormAdmin = () => {
         setCandidatoForm({ ...candidatoForm, foto: fileReader.result });
       };
     } else return;
+    // eslint-disable-next-line
   }, [img, fotoC, candidatoSelected]);
 
   const handleClose = () => {

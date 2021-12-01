@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import alertaReducer from "./alertaReducer";
-import { MOSTRAR_ALERTA, OCULTAR_ALERTA } from "../../types";
+import { MOSTRAR_ALERTA } from "../../types";
 import AlertaContext from "./alertasContext";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -45,11 +45,6 @@ const AlertaState = (props) => {
     }
   };
 
-  const ocultarAlerta = () => {
-    dispatch({
-      type: OCULTAR_ALERTA,
-    });
-  };
   return (
     <AlertaContext.Provider
       value={{

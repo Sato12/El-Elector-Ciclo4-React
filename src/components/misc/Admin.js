@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router";
 import SideBar from "../layout/Sidebar";
 import CandidatosContext from "../../context/candidatos/candidatosContext";
 import TablaCandidatosAdmin from "../layout/TablaCandidatosAdmin";
@@ -12,6 +11,7 @@ const Admin = () => {
 
   useEffect(() => {
     usuarioAutenticado();
+    // eslint-disable-next-line
   }, []);
 
   const candidatosContext = useContext(CandidatosContext);

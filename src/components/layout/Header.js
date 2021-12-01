@@ -11,6 +11,7 @@ const Header = () => {
 
   useEffect(() => {
     usuarioAutenticado();
+    // eslint-disable-next-line
   }, [autenticado]);
 
   const handleCerrarSesion = () => {
@@ -52,7 +53,7 @@ const Header = () => {
             <div className="col-auto col-md-auto">
               <button
                 className="btnn btnn-header "
-                onClick={() => navigate("/contacto")}
+                onClick={() => navigate("/gitouch")}
               >
                 Contacto
               </button>

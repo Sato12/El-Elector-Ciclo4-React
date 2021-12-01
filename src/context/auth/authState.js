@@ -1,9 +1,8 @@
-import React, { useContext, useReducer } from "react";
+import React, { useReducer } from "react";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import clienteAxios from "../../config/axios";
 import tokenAuth from "../../config/authToken";
-import AlertaContext from "../alertas/alertasContext";
 import {
   REGISTRO_EXITOSO,
   REGISTRO_ERROR,
