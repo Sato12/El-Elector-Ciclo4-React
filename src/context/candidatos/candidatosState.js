@@ -109,6 +109,7 @@ const CandidatosState = (props) => {
   // Editar candidato
   const editarCandidato = async (candidato) => {
     console.log(`editando el candidato con id ${candidato._id}`);
+    console.log(candidato);
     try {
       const respuesta = await clienteAxios.put(
         `/api/candidatos/${candidato._id}`,

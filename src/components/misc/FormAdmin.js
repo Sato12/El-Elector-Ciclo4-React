@@ -62,16 +62,15 @@ const FormAdmin = () => {
     if (candidatoSelected) {
       obtenerCandidatosUsuario();
       setCandidatoForm(candidatoSelected[0]);
-      console.log(candidatoForm);
-      console.log(candidatoSelected[0]);
-      console.log(Object.values(candidatoSelected[0].cargos).length);
       setGapsCargos(Object.values(candidatoSelected[0].cargos).length);
       setGapsFormacion(Object.values(candidatoSelected[0].formacion).length);
       setEditMode(true);
     }
 
     if (img) {
+      setCandidatoForm({ ...candidatoForm, logo: "" });
       const fileReader = new FileReader();
+
       fileReader.onloadend = () => {
         setCandidatoForm({ ...candidatoForm, logo: fileReader.result });
       };
@@ -79,10 +78,11 @@ const FormAdmin = () => {
     }
     if (fotoC) {
       const fileReader = new FileReader();
+      fileReader.readAsDataURL(fotoC);
+
       fileReader.onloadend = () => {
         setCandidatoForm({ ...candidatoForm, foto: fileReader.result });
       };
-      fileReader.readAsDataURL(fotoC);
     } else return;
   }, [img, fotoC, candidatoSelected]);
 
@@ -143,11 +143,13 @@ const FormAdmin = () => {
   const onChangeImg = (e) => {
     console.log(e.target.files[0]);
     setImg(e.target.files[0]);
+    setFotoC(null);
   };
 
   const onChangeFoto = (e) => {
     console.log(e.target.files[0]);
     setFotoC(e.target.files[0]);
+    setImg(null);
   };
 
   const [gapsCargos, setGapsCargos] = useState(1);
@@ -193,8 +195,6 @@ const FormAdmin = () => {
       console.log("No se pasó la validación del form...");
       return;
     }
-
-    console.log(candidatos.length);
     handleSave();
     handleClose();
   };
