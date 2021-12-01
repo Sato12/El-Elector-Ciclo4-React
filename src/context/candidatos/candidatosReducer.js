@@ -6,6 +6,9 @@ import {
   MODAL_ADDFORM,
   CLOSE_ADDFORM,
   AGREGAR_CANDIDATO,
+  OBTENER_CANDIDATOS,
+  CONTAR_EDITS,
+  ELIMINAR_CANDIDATO,
 } from "../../types";
 
 export default (state, action) => {
@@ -14,7 +17,7 @@ export default (state, action) => {
       return {
         ...state,
         candidatoSelected: state.candidatos.filter(
-          (candidato) => candidato.id === action.payload
+          (candidato) => candidato._id === action.payload
         ),
       };
 
@@ -31,10 +34,24 @@ export default (state, action) => {
       return { ...state, modalAddForm: true };
 
     case CLOSE_ADDFORM:
-      return { ...state, modalAddForm: false };
+      return { ...state, modalAddForm: false, candidatoSelected: null };
 
     case AGREGAR_CANDIDATO:
       return { ...state, candidatos: [...state.candidatos, action.payload] };
+
+    case OBTENER_CANDIDATOS:
+      return { ...state, candidatos: action.payload.candidatos };
+
+    case CONTAR_EDITS:
+      return { ...state, numberEdits: state.numberEdits + 1 };
+
+    case ELIMINAR_CANDIDATO:
+      return {
+        ...state,
+        candidatos: state.candidatos.filter(
+          (candidato) => candidato._id !== action.payload
+        ),
+      };
 
     default:
       return state;

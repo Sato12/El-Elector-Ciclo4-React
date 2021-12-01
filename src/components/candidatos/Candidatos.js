@@ -7,9 +7,11 @@ import CandidatoDetail from "./CandidatoDetail";
 
 const Candidatos = () => {
   const candidatosContext = useContext(CandidatosContext);
-  const { candidatos, candidatoSelected } = candidatosContext;
+  const { candidatos, candidatoSelected, obtenerCandidatosUsuario } =
+    candidatosContext;
 
   useEffect(() => {
+    obtenerCandidatosUsuario();
     if (candidatos.length === 0) return;
     // eslint-disable-next-line
   }, []);
@@ -28,8 +30,12 @@ const Candidatos = () => {
               base de datos estatal para leer más características.
             </TextoEnunciado>
             <BarraListado />
-            {candidatos.map((candidato) => (
-              <TarjetaCandidato key={candidato.id} candidato={candidato} />
+            {candidatos.map((candidato, index) => (
+              <TarjetaCandidato
+                key={candidato._id}
+                candidato={candidato}
+                index={index}
+              />
             ))}
           </div>
         </main>

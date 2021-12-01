@@ -6,30 +6,70 @@ import { faPlusSquare, faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
 const FormAdmin = () => {
   const candidatosContext = useContext(CandidatosContext);
-  const { modalAddForm, closeAddForm, addCandidato } = candidatosContext;
+  const {
+    candidatos,
+    candidatoSelected,
+    modalAddForm,
+    closeAddForm,
+    addCandidato,
+    editarCandidato,
+    obtenerCandidatosUsuario,
+  } = candidatosContext;
 
   const [img, setImg] = useState(null);
   const [fotoC, setFotoC] = useState(null);
 
+  const [editMode, setEditMode] = useState(false);
+
   const initialState = {
-    id: 0,
+    fId: 0,
     nombre: "",
     fullNombre: "",
     descripcionBreve: "",
     partido: "",
     genero: "",
-    cargos: {},
-    formacion: {},
-    logo: null,
+    cargos: { cargos0: "" },
+    formacion: { formacion0: "" },
+    logo: "",
     posicion: "",
     encuestas: true,
     profesion: "",
     foto: "",
     sigep: "",
+    idDB: 0,
   };
   const [candidatoForm, setCandidatoForm] = useState(initialState);
+  const {
+    fId,
+    nombre,
+    fullNombre,
+    descripcionBreve,
+    partido,
+    genero,
+    cargos,
+    formacion,
+    logo,
+    posicion,
+    encuestas,
+    profesion,
+    foto,
+    sigep,
+    idDB,
+  } = candidatoForm;
 
   useEffect(() => {
+    setEditMode(false);
+    if (candidatoSelected) {
+      obtenerCandidatosUsuario();
+      setCandidatoForm(candidatoSelected[0]);
+      console.log(candidatoForm);
+      console.log(candidatoSelected[0]);
+      console.log(Object.values(candidatoSelected[0].cargos).length);
+      setGapsCargos(Object.values(candidatoSelected[0].cargos).length);
+      setGapsFormacion(Object.values(candidatoSelected[0].formacion).length);
+      setEditMode(true);
+    }
+
     if (img) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
@@ -44,22 +84,28 @@ const FormAdmin = () => {
       };
       fileReader.readAsDataURL(fotoC);
     } else return;
-  }, [img, fotoC]);
+  }, [img, fotoC, candidatoSelected]);
 
   const handleClose = () => {
     setCandidatoForm(initialState);
+    setFotoC(null);
+    setImg(null);
     closeAddForm();
   };
 
   const handleSave = () => {
-    addCandidato(candidatoForm);
-    closeAddForm();
+    if (editMode) {
+      editarCandidato(candidatoForm);
+    } else {
+      addCandidato(candidatoForm);
+    }
   };
 
   const onChangeCandidato = (e) => {
     setCandidatoForm({
       ...candidatoForm,
       [e.target.name]: e.target.value,
+      fId: candidatos.length + 1,
     });
   };
 
@@ -127,11 +173,37 @@ const FormAdmin = () => {
     } else return;
   };
 
+  const handleSubmit = () => {
+    if (
+      nombre.trim() === "" ||
+      fullNombre.trim() === "" ||
+      descripcionBreve.trim() === "" ||
+      partido.trim() === "" ||
+      genero.trim() === "" ||
+      Object.keys(cargos).length === 0 ||
+      Object.keys(formacion).length === 0 ||
+      logo.trim() === "" ||
+      posicion.trim() === "" ||
+      logo.trim() === "" ||
+      posicion.trim() === "" ||
+      profesion.trim() === "" ||
+      foto.trim() === "" ||
+      sigep.trim() === ""
+    ) {
+      console.log("No se pasó la validación del form...");
+      return;
+    }
+
+    console.log(candidatos.length);
+    handleSave();
+    handleClose();
+  };
+
   return (
     <Modal show={modalAddForm} onHide={handleClose} centered size={"xl"}>
       <Modal.Header closeButton>
         <Modal.Title className="modal-candidato-titulo">
-          <h2>Agregar Candidato</h2>
+          {editMode ? <h2>Editar Candidato</h2> : <h2>Agregar Candidato</h2>}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -139,24 +211,6 @@ const FormAdmin = () => {
           <div className="row justify-content-center">
             <div className="col col-md-10">
               <form>
-                <label
-                  htmlFor="id"
-                  className="ms-3 mt-5 form-gap-pequeño-label"
-                >
-                  id
-                </label>
-                <input
-                  type="number"
-                  className="input-text form-gap-pequeño"
-                  placeholder="Id Candidato"
-                  name="id"
-                  id="id"
-                  onChange={onChangeCandidato}
-                  value={candidatoForm.id}
-                />
-                <br />
-                <br />
-                <hr />
                 <label
                   htmlFor="nombre"
                   className="ms-3 mt-5 form-gap-pequeño-label"
@@ -237,18 +291,20 @@ const FormAdmin = () => {
                   Cargos
                 </label>
                 <br />
-                {[...Array(gapsCargos)].map((elemento, index) => (
-                  <input
-                    key={index}
-                    type="text"
-                    className="input-text form-gap-adicional"
-                    placeholder="Trabajos del candidato"
-                    name="cargos"
-                    id={`cargos${index}`}
-                    onChange={onChangeArrays}
-                    value={candidatoForm.cargos[index]}
-                  />
-                ))}
+                {Object.values(candidatoForm.cargos)
+                  ? [...Array(gapsCargos)].map((elemento, index) => (
+                      <input
+                        key={index}
+                        type="text"
+                        className="input-text form-gap-adicional"
+                        placeholder="Trabajos del candidato"
+                        name="cargos"
+                        id={`cargos${index}`}
+                        onChange={onChangeArrays}
+                        value={Object.values(candidatoForm.cargos)[index]}
+                      />
+                    ))
+                  : null}
                 <FontAwesomeIcon
                   className="form-sum-icon"
                   icon={faPlusSquare}
@@ -273,18 +329,20 @@ const FormAdmin = () => {
                   Formación
                 </label>
                 <br />
-                {[...Array(gapsFormacion)].map((elemento, index) => (
-                  <input
-                    key={index}
-                    type="text"
-                    className="input-text form-gap-adicional"
-                    placeholder="Estudios del candidato"
-                    name="formacion"
-                    id={`formacion${index}`}
-                    onChange={onChangeArrays}
-                    value={candidatoForm.formacion[index]}
-                  />
-                ))}
+                {Object.values(candidatoForm.formacion)
+                  ? [...Array(gapsFormacion)].map((elemento, index) => (
+                      <input
+                        key={index}
+                        type="text"
+                        className="input-text form-gap-adicional"
+                        placeholder="Estudios del candidato"
+                        name="formacion"
+                        id={`formacion${index}`}
+                        onChange={onChangeArrays}
+                        value={Object.values(candidatoForm.formacion)[index]}
+                      />
+                    ))
+                  : null}
                 <FontAwesomeIcon
                   className="form-sum-icon"
                   icon={faPlusSquare}
@@ -454,7 +512,11 @@ const FormAdmin = () => {
         <button className="btnn btnn-primario" onClick={handleClose}>
           Cerrar
         </button>
-        <button className="btnn btnn-primario" onClick={handleSave}>
+        <button
+          type="submit"
+          className="btnn btnn-primario"
+          onClick={handleSubmit}
+        >
           Guardar
         </button>
       </Modal.Footer>

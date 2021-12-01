@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -11,16 +11,31 @@ const TablaCandidatosAdmin = () => {
   const {
     candidatos,
     candidatoSelected,
+    numberEdits,
     selecCandidato,
     mostrarModalCandidato,
     openAddForm,
+    obtenerCandidatosUsuario,
+    deleteCandidato,
   } = candidatosContext;
+
+  useEffect(() => {
+    obtenerCandidatosUsuario();
+  }, [numberEdits]);
 
   const mostrarDetalleCandidato = (id) => {
     selecCandidato(id);
     mostrarModalCandidato();
   };
 
+  const handleEdit = (id) => {
+    selecCandidato(id);
+    openAddForm();
+  };
+
+  const handleDelete = (id) => {
+    deleteCandidato(id);
+  };
   return (
     <div className="container">
       {candidatoSelected ? <CandidatoDetail /> : null}
@@ -40,16 +55,16 @@ const TablaCandidatosAdmin = () => {
           </tr>
         </thead>
         <tbody>
-          {candidatos ? (
+          {candidatos.length > 0 ? (
             candidatos.map((candidato) => (
-              <tr key={candidato.id}>
-                <th scope="row">{candidato.id}</th>
+              <tr key={candidato._id}>
+                <th scope="row">{candidato.fId}</th>
                 <td>{candidato.nombre}</td>
                 <td>{candidato.partido}</td>
                 <td>{candidato.profesion}</td>
                 <td>
                   <BotonModal
-                    onClick={() => mostrarDetalleCandidato(candidato.id)}
+                    onClick={() => mostrarDetalleCandidato(candidato._id)}
                   >
                     Ver detalle
                   </BotonModal>
@@ -59,19 +74,21 @@ const TablaCandidatosAdmin = () => {
                     className="tajerta-icono-posicion  tabla-candi-editbott"
                     icon={faEdit}
                     size="2x"
+                    onClick={() => handleEdit(candidato._id)}
                   />
                   <FontAwesomeIcon
                     className="tajerta-icono-posicion ms-2 tabla-candi-editbott"
                     icon={faTrashAlt}
                     size="2x"
+                    onClick={() => handleDelete(candidato._id)}
                   />
                 </td>
               </tr>
             ))
           ) : (
-            <h1 className="text-info">
-              Sin candidatos. Agrega para visualizar.
-            </h1>
+            <tr className="text-info">
+              <th>Sin candidatos. Agrega para visualizar.</th>
+            </tr>
           )}
         </tbody>
       </table>

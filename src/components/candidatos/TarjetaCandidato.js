@@ -4,9 +4,18 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import styled from "@emotion/styled";
 import CandidatosContext from "../../context/candidatos/candidatosContext";
 
-const TarjetaCandidato = ({ candidato }) => {
-  const { id, nombre, partido, logo, posicion, encuestas, profesion, foto } =
-    candidato;
+const TarjetaCandidato = ({ candidato, index }) => {
+  const {
+    _id,
+    nombre,
+    partido,
+    logo,
+    posicion,
+    encuestas,
+    profesion,
+    foto,
+    fId,
+  } = candidato;
 
   const candidatosContext = useContext(CandidatosContext);
   const { selecCandidato, mostrarModalCandidato } = candidatosContext;
@@ -73,7 +82,9 @@ const TarjetaCandidato = ({ candidato }) => {
                   <div className="col-10"></div>
                   <div className="col-2">
                     <div className="card border-secondary">
-                      <h3 className="card-title numero-de-tarjeta">{id}</h3>
+                      <h3 className="card-title numero-de-tarjeta">
+                        {index + 1}
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -84,7 +95,7 @@ const TarjetaCandidato = ({ candidato }) => {
                 <div className="col-12 d-flex justify-content-center ">
                   <BotonMasInfo
                     className="btnn btnn-primario "
-                    onClick={() => mostrarDetalleCandidato(id)}
+                    onClick={() => mostrarDetalleCandidato(_id)}
                   >
                     <FontAwesomeIcon
                       className="tajerta-icono-posicion m-4"
