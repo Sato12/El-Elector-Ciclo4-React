@@ -45,14 +45,18 @@ const Header = () => {
               </button>
             </div>
             <div className="col-auto col-md-auto ">
-              <button className="btnn btnn-header ">Ver Partidos</button>
+              <button className="btnn btnn-header "
+              onClick={() => navigate("/verpartidos")}
+              >Ver Partidos</button>
             </div>
             <div className="col-auto col-md-auto ">
-              <button className="btnn btnn-header ">Sobre Nosotros</button>
+              <button className="btnn btnn-header "
+               onClick={() => navigate("/Sobrenosotros")}
+              >Sobre Nosotros</button>
             </div>
             <div className="col-auto col-md-auto">
               <button
-                className="btnn btnn-header "
+                className="btnn btnn-header  "
                 onClick={() => navigate("/gitouch")}
               >
                 Contacto

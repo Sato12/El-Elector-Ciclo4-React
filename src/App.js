@@ -12,7 +12,8 @@ import Contacto from "./components/Contacto/ContactoForm";
 import Registro from "./components/login/Registro";
 import tokenAuth from "./config/authToken";
 import RutaPrivada from "./components/ruta/RutaPrivada";
-
+import Sobrenosotros from "./components/Sobrenosotros/Sobrenosotros";
+import Verpartidos from "./components/Verpartidos/verpartidos";
 // Revisar si hay token
 const token = localStorage.getItem("token");
 
@@ -25,6 +26,7 @@ function App() {
     <AuthState>
       <AlertaState>
         <CandidatosState>
+         
           <Router>
             <Header />
             <Routes>
@@ -35,11 +37,14 @@ function App() {
               <Route path="/Contacto" element={<Contacto />} />
               <Route path="/registro" element={<Registro />} />
               <Route path="/gitouch" element={<GetInTouch />} />
+              <Route path="/Sobrenosotros" element={<Sobrenosotros/>} />
+              <Route path="/Verpartidos" element={<Verpartidos/>} />
             </Routes>
           </Router>
         </CandidatosState>
       </AlertaState>
     </AuthState>
+  
   );
 }
 
